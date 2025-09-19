@@ -19,3 +19,47 @@ for (let i = 0; i < arr.length; i++) {
   arr[i] /= 100; // 나누기 100을 한 값을 대입하겠다
 }
 console.log(arr);
+
+// for of. -> index를 사용하지 않고 array를 자체를 탐색하는 경우
+console.log(arr);
+// for (let v of arr) {
+for (const v of arr) {
+  // v -> 한번의 반복에만 존재하고 소멸함.
+  console.log(v); // 별도로 arr[i]하지 않아도...
+  //   v += 10; // 영향이 없다
+  // 혹시나 헷갈릴까봐 아예 const로 하라고 권장.
+}
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+  i += 10; // 영향 받음
+}
+
+// 이중 배열과 별찍기
+
+// 표, 행렬. 좌표.
+// *
+// **
+// ***
+// ****
+// *****
+console.log("*");
+console.log("**");
+console.log("***");
+console.log("****");
+console.log("*****");
+
+for (let i = 1; i <= 5; i++) {
+  console.log("*".repeat(i));
+}
+
+const matrix = [];
+for (let i = 0; i < 5; i++) {
+  // 가로를 의미하는 축 (행)
+  const row = [];
+  for (let j = 0; j < 5; j++) {
+    // 세로를 의미하는 축
+    row.push("*"); // 열.
+  }
+  matrix.push(row);
+}
+console.log(matrix);
