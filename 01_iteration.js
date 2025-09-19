@@ -24,4 +24,44 @@ console.log("sum", sum);
 // 3의 배수를 출력
 for (let i = 3; i < 50; i += 3) {
   console.log(i);
+  // 이 내부에서 다시금 i 선언하려하면 에러가 생기는데...
 }
+// i를 쓰려고 하면 문제가 X.
+
+// 어? 뭔가 이상하다 i가 왜 재활용할 수 있음?
+// let은 block scope. for () {}. 내부에는 같은 이름을 쓰는데, 바깥에서는 그걸 모르는 것.
+
+// 중첩 for문.
+for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
+    // 같은 이름을 써버리면은 X
+    console.log(i, i);
+  }
+}
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
+    console.log(i, j);
+  }
+}
+
+// 흐름제어 -> continue, break. / 무한반복
+// 1. continue, break.
+for (let i = 0; i < 10; i++) {
+  // if (i % 2 != 0) { // 나머지 연산 시 -> 나머지가 있으면 0이 아님 -> 2로 나눴을 때 나머지 있으면 홀수
+  if (i % 2) {
+    // 홀수를 검증하는 방식
+    // 홀수인 경우에는 생략
+    continue;
+  }
+  console.log("i", i);
+}
+let result = 1;
+for (let i = 1; i <= 50; i++) {
+  //   if (result >= 1000) {
+  //     break;
+  //   }
+  if (result >= 1000) break; // {}가 1줄이면 생략.
+  result *= i;
+}
+console.log(result);
+
