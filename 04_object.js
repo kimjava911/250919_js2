@@ -58,3 +58,28 @@ array[0.5] = "aaa";
 console.log(array);
 array[-1] = "aaa";
 console.log(array);
+
+// java할 때 주소값이랑 깊은복사 얕은복사 총 정리합시다...
+
+const user = {
+  name: "kim",
+  age: 20,
+  salary: 100,
+  email: "kim@java.com",
+};
+
+for (const key in user) {
+  console.log(key);
+  console.log(user[key]);
+}
+
+console.log("name" in user);
+console.log("lunch" in user);
+
+Object; // class.
+Object.values;
+Object.keys;
+
+console.log(Object.keys(user));
+console.log(Object.values(user));
+console.log(Object.entries(user));
