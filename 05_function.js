@@ -78,3 +78,17 @@ if (loginResult) {
 } else {
   console.log("실패했습니다!");
 }
+
+// 호이스팅 예고(?)
+awesomeFun(); // (선언전에?) 호출을 한다
+// 미리 HTML에 javascript 관련된 내용을 작성을 하고
+// -> 나중에 javascript에서 기술하는 경우가 많다보니까...
+// javscript의 함수나 변수들은 var, function으로 만들어지는 대부분의 '선언'되는 것들은
+// 문제가 일어나지 않도록 -> 최상단에 불러서 '미리' 선언을 해놓는 '호이스팅'
+// -> 방어적 코딩의 일환으로 이 호이스팅을 막거나 지양하는 코딩을 배울 예정 (예: 함수 표현식.)
+
+function awesomeFun() {
+  console.log("멋진 기능!");
+} // 선언을 하고
+
+awesomeFun(); // 호출을 한다
